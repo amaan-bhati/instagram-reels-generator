@@ -1,14 +1,16 @@
 import React from 'react';
-import {colors as C, radius} from '../theme';
+import {colors as C, grad, radius} from '../theme';
 import {mono, sans} from './fonts';
 
-export type ChipTone = 'neutral' | 'orange' | 'pass' | 'fail';
+export type ChipTone = 'neutral' | 'orange' | 'pass' | 'fail' | 'brand';
 
 const tones: Record<ChipTone, {bg: string; fg: string; bd: string}> = {
-  neutral: {bg: C.bgDeep, fg: C.textDim, bd: C.codeStroke},
-  orange: {bg: 'rgba(242,106,33,0.10)', fg: C.orangeDeep, bd: 'rgba(242,106,33,0.30)'},
-  pass: {bg: 'rgba(5,150,105,0.10)', fg: C.masked, bd: 'rgba(5,150,105,0.28)'},
-  fail: {bg: C.exposedBg, fg: C.exposed, bd: 'rgba(220,38,38,0.30)'},
+  neutral: {bg: grad.neutral, fg: C.textDim, bd: C.codeStroke},
+  orange: {bg: grad.brandSoft, fg: C.orangeDeep, bd: 'rgba(247,107,28,0.34)'},
+  pass: {bg: grad.passSoft, fg: C.masked, bd: 'rgba(5,150,105,0.30)'},
+  fail: {bg: grad.failSoft, fg: C.exposed, bd: 'rgba(225,29,72,0.32)'},
+  /** filled brand gradient, white text. For the one thing that must pop. */
+  brand: {bg: grad.brand, fg: '#FFFFFF', bd: 'transparent'},
 };
 
 export const Chip: React.FC<{
@@ -27,6 +29,7 @@ export const Chip: React.FC<{
         fontSize: size,
         color: t.fg,
         background: t.bg,
+        boxShadow: tone === 'brand' ? '0 8px 22px rgba(247,107,28,0.30)' : undefined,
         border: `1.5px solid ${t.bd}`,
         borderRadius: radius.pill,
         padding: `${Math.round(size * 0.34)}px ${Math.round(size * 0.68)}px`,

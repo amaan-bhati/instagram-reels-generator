@@ -1,13 +1,41 @@
-import {readdirSync, readFileSync} from 'fs';
+import {readdirSync, readFileSync, statSync} from 'fs';
 import {join} from 'path';
-const dir = 'src/scenes';
-let bad = 0;
-for (const f of readdirSync(dir)) {
-  const src = readFileSync(join(dir, f), 'utf8');
-  src.split('\n').forEach((line, i) => {
-    const m = line.match(/#[0-9a-fA-F]{3,8}\b/);
-    if (m) { console.error(`${dir}/${f}:${i + 1}  raw hex ${m[0]} — import from theme.ts instead`); bad++; }
+
+const walk = (dir) =>
+  readdirSync(dir).flatMap((f) => {
+    const p = join(dir, f);
+    return statSync(p).isDirectory() ? walk(p) : p.endsWith('.tsx') || p.endsWith('.ts') ? [p] : [];
   });
+
+let bad = 0;
+
+// DESIGN §1 - never hardcode a hex in a scene
+for (const p of walk('src/scenes')) {
+  readFileSync(p, 'utf8')
+    .split('\n')
+    .forEach((line, i) => {
+      const m = line.match(/#[0-9a-fA-F]{3,8}\b/);
+      if (m) {
+        console.error(`${p}:${i + 1}  raw hex ${m[0]}, import from theme.ts instead`);
+        bad++;
+      }
+    });
 }
-if (bad) { console.error(`\n${bad} raw hex value(s) in scenes. DESIGN §1 violation.`); process.exit(1); }
-console.log('✓ no raw hex in scenes — all colour comes from theme.ts');
+
+// House copy rule - no em dashes or en dashes anywhere
+for (const p of walk('src')) {
+  readFileSync(p, 'utf8')
+    .split('\n')
+    .forEach((line, i) => {
+      if (/[—–]/.test(line)) {
+        console.error(`${p}:${i + 1}  em/en dash is not allowed: ${line.trim().slice(0, 70)}`);
+        bad++;
+      }
+    });
+}
+
+if (bad) {
+  console.error(`\n${bad} violation(s).`);
+  process.exit(1);
+}
+console.log('OK: no raw hex in scenes, no em/en dashes anywhere');

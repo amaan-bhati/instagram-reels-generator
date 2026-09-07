@@ -4,7 +4,7 @@ import {breathe} from '../lib/anim';
 import {colors as C, radius} from '../theme';
 import {sans} from './fonts';
 
-/** DESIGN §5 — secondary motion always on: the REC dot breathes. */
+/** DESIGN §5: secondary motion always on: the REC dot breathes. */
 export const RecDot: React.FC<{label?: string}> = ({label = 'REC'}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();

@@ -1,8 +1,9 @@
 import React from 'react';
-import {colors as C, canvas, type as T} from '../theme';
+import {Img, staticFile} from 'remotion';
+import {colors as C, canvas, grad, type as T} from '../theme';
 import {sans} from './fonts';
 
-/** DESIGN §2 — DM Sans, headings 700, tight letter-spacing. */
+/** DESIGN §2: DM Sans, headings 700, tight letter-spacing. */
 export const Heading: React.FC<{
   children: React.ReactNode;
   size?: number;
@@ -19,6 +20,34 @@ export const Heading: React.FC<{
       letterSpacing: -1.6,
       color,
       textAlign: align,
+      ...style,
+    }}
+  >
+    {children}
+  </div>
+);
+
+/** Gradient headline text. For the line that has to land. */
+export const GradText: React.FC<{
+  children: React.ReactNode;
+  size?: number;
+  g?: string;
+  align?: 'left' | 'center';
+  style?: React.CSSProperties;
+}> = ({children, size = 70, g = grad.brand, align = 'center', style}) => (
+  <div
+    style={{
+      fontFamily: sans,
+      fontWeight: 700,
+      fontSize: size,
+      lineHeight: 1.14,
+      letterSpacing: -1.6,
+      textAlign: align,
+      background: g,
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      color: 'transparent',
       ...style,
     }}
   >
@@ -49,7 +78,7 @@ export const Sub: React.FC<{
 
 /**
  * Burned-in caption. This reel has no voiceover, so the caption line IS the script.
- * Pinned above the bottom safe zone (DESIGN §0.6).
+ * Sits in the caption band ABOVE the platform-UI zone: never in the bottom third.
  */
 export const Caption: React.FC<{children: React.ReactNode; opacity?: number}> = ({
   children,
@@ -60,7 +89,7 @@ export const Caption: React.FC<{children: React.ReactNode; opacity?: number}> = 
       position: 'absolute',
       left: canvas.gutter,
       right: canvas.gutter,
-      top: canvas.safeBottom - 132,
+      top: canvas.captionTop,
       textAlign: 'center',
       fontFamily: sans,
       fontWeight: 600,
@@ -75,28 +104,7 @@ export const Caption: React.FC<{children: React.ReactNode; opacity?: number}> = 
   </div>
 );
 
-/** Wordmark placeholder — swap for the real Keploy logo asset when you have it. */
-export const KeployMark: React.FC<{size?: number}> = ({size = 46}) => (
-  <div style={{display: 'inline-flex', alignItems: 'center', gap: 16}}>
-    <div
-      style={{
-        width: size,
-        height: size,
-        borderRadius: 14,
-        background: `linear-gradient(135deg, ${C.orange} 0%, ${C.orangeDeep} 100%)`,
-        boxShadow: '0 8px 22px rgba(242,106,33,0.30)',
-      }}
-    />
-    <span
-      style={{
-        fontFamily: sans,
-        fontWeight: 700,
-        fontSize: size * 0.86,
-        color: C.text,
-        letterSpacing: -1,
-      }}
-    >
-      keploy
-    </span>
-  </div>
+/** The real Keploy logo (single-line lockup), from public/keploy-logo.svg. */
+export const KeployMark: React.FC<{size?: number}> = ({size = 50}) => (
+  <Img src={staticFile('keploy-logo.svg')} style={{height: size * 1.85}} />
 );

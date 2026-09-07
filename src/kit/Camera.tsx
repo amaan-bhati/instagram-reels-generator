@@ -3,7 +3,7 @@ import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {driftX, pushIn} from '../lib/anim';
 
 /**
- * DESIGN §0.5 — the camera is always moving subtly.
+ * DESIGN §0.5: the camera is always moving subtly.
  * Wrap every scene body in this. Never render a static frame.
  */
 export const Camera: React.FC<{

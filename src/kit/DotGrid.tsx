@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {colors as C} from '../theme';
 
-/** DESIGN §0.1 — pure white bg + faint dot grid. Never dark. */
+/** DESIGN §0.1: pure white bg + faint dot grid. Never dark. */
 export const DotGrid: React.FC<{gap?: number}> = ({gap = 44}) => (
   <AbsoluteFill
     style={{

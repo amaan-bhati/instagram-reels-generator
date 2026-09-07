@@ -12,7 +12,7 @@ const tintBg = {
   orange: 'rgba(242,106,33,0.10)',
 };
 
-/** DESIGN §5 — red OUTLINE box for the failure token, orange FILL for the cause. */
+/** DESIGN §5: red OUTLINE box for the failure token, orange FILL for the cause. */
 const markStyle = (tone: Mark['tone']): React.CSSProperties =>
   tone === 'fail'
     ? {
@@ -167,7 +167,7 @@ export const CodeCard: React.FC<{
                   fontFamily: mono,
                   fontSize,
                   lineHeight: 1.62,
-                  whiteSpace: 'pre', // DESIGN §2 — nowrap, lines must not wrap
+                  whiteSpace: 'pre', // DESIGN §2: nowrap, lines must not wrap
                   color: C.text,
                 }}
               >

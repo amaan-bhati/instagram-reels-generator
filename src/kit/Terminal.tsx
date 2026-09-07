@@ -16,10 +16,10 @@ const toneColor = {
 };
 
 /**
- * Light terminal card. DESIGN §0.1 — never dark, even for a terminal.
+ * Light terminal card. DESIGN §0.1: never dark, even for a terminal.
  *
  * NOTE: DESIGN §0.4 requires REAL captured output. These lines are modelled on
- * Keploy's actual CLI but are NOT a capture — swap for a real screen recording
+ * Keploy's actual CLI but are NOT a capture: swap for a real screen recording
  * (<OffthreadVideo>) before shipping. See README "Before you ship".
  */
 export const Terminal: React.FC<{

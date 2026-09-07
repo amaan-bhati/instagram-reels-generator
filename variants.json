@@ -1,0 +1,49 @@
+{
+  "_comment": "Registry of every cut. Adding a variant means adding a row here, NOT editing an existing one. `node scripts-check-variants.mjs` fails if any frozen variant's files, composition or render goes missing.",
+  "variants": [
+    {
+      "name": "The Blast Radius",
+      "composition": "BlastRadius",
+      "seconds": 60,
+      "frames": 1800,
+      "timeline": "src/timeline.ts",
+      "reel": "src/Reel.tsx",
+      "scenes": "src/scenes",
+      "output": "out/blast-radius.mp4",
+      "script": "SCRIPT.md",
+      "status": "frozen",
+      "note": "Full concept explainer. Teaches regression and blast radius, then Keploy."
+    },
+    {
+      "name": "Regressions 40s",
+      "composition": "Regressions40",
+      "seconds": 40,
+      "frames": 1200,
+      "timeline": "src/timelineShort.ts",
+      "reel": "src/ReelShort.tsx",
+      "scenes": "src/scenes/short",
+      "output": "out/regressions-40s.mp4",
+      "script": "SCRIPT-SHORT.md",
+      "status": "frozen",
+      "note": "Problem in two beats. Drops the four concept-teaching scenes."
+    },
+    {
+      "name": "Regressions 30s",
+      "composition": "Regressions30",
+      "seconds": 30,
+      "frames": 900,
+      "timeline": "src/timelineTight.ts",
+      "reel": "src/ReelTight.tsx",
+      "scenes": "src/scenes/tight",
+      "output": "out/regressions-30s.mp4",
+      "script": "SCRIPT-TIGHT.md",
+      "status": "current",
+      "note": "Same seven beats as 40s, every hold pulled to its floor."
+    }
+  ],
+  "archived": [
+    {"output": "out/happy-path-trap-v1.mp4", "seconds": 38, "note": "first cut, pre blast-radius"},
+    {"output": "out/blast-radius-v2.mp4", "seconds": 55, "note": "mixed checkout/PetClinic examples"},
+    {"output": "out/blast-radius-v3.mp4", "seconds": 60, "note": "terminal-heavy, pre-gradient"}
+  ]
+}

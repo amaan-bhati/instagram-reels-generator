@@ -1,7 +1,7 @@
 import {Easing, interpolate, spring} from 'remotion';
 
 /**
- * The house settled spring. DESIGN §5 — damping 16, mass .9, stiffness 130.
+ * The house settled spring. DESIGN §5: damping 16, mass .9, stiffness 130.
  * Every entrance uses this so the whole reel shares one physical feel.
  */
 export const settle = (frame: number, fps: number, delay = 0) =>
@@ -20,13 +20,13 @@ export const enter = (frame: number, fps: number, delay = 0, rise = 26) => {
   };
 };
 
-/** DESIGN §5 — stagger peers 3-4 frames. */
+/** DESIGN §5: stagger peers 3-4 frames. */
 export const stagger = (i: number, step = 4) => i * step;
 
 export type Seg = {at: number; to: number; ease?: (t: number) => number};
 
 /**
- * mseg — multi-segment easing.
+ * mseg: multi-segment easing.
  * Drive one value through several keyframes, each with its own easing.
  * Used for camera pans over big screenshots where a single interpolate is too blunt.
  *
@@ -50,7 +50,7 @@ export const mseg = (frame: number, from: number, segs: Seg[]): number => {
 };
 
 /**
- * Camera push-in. DESIGN §0.5 / §5 — 2-4% over the scene, easeInOutCubic.
+ * Camera push-in. DESIGN §0.5 / §5: 2-4% over the scene, easeInOutCubic.
  * The camera is NEVER fully static.
  */
 export const pushIn = (frame: number, duration: number, amount = 0.03) =>

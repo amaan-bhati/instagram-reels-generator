@@ -4,8 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "remotion studio",
-    "render": "remotion render HappyPathTrap out/happy-path-trap.mp4",
-    "still": "remotion still HappyPathTrap"
+    "render": "remotion render BlastRadius out/blast-radius.mp4",
+    "still": "remotion still BlastRadius",
+    "render:short": "remotion render Regressions40 out/regressions-40s.mp4",
+    "render:tight": "remotion render Regressions30 out/regressions-30s.mp4",
+    "render:all": "npm run render && npm run render:short && npm run render:tight",
+    "check": "node scripts-lint-tokens.mjs && node scripts-check-variants.mjs && tsc --noEmit"
   },
   "dependencies": {
     "@remotion/cli": "4.0.417",

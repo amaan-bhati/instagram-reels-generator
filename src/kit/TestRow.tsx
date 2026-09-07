@@ -5,14 +5,14 @@ import {mono, sans} from './fonts';
 export type Status = 'pass' | 'fail' | 'unwritten' | 'untested';
 
 /**
- * DESIGN §6 — pass/fail is ALWAYS colour + icon + label. Never colour alone.
+ * DESIGN §6: pass/fail is ALWAYS colour + icon + label. Never colour alone.
  * Every status here carries all three.
  */
 const cfg: Record<Status, {icon: string; fg: string; label: string; dim?: boolean}> = {
   pass: {icon: '✓', fg: C.masked, label: 'PASS'},
   fail: {icon: '✕', fg: C.exposed, label: 'FAILED'},
   unwritten: {icon: '○', fg: C.textFaint, label: 'NOT WRITTEN', dim: true},
-  untested: {icon: '—', fg: C.textFaint, label: 'NO TEST', dim: true},
+  untested: {icon: '○', fg: C.textFaint, label: 'NO TEST', dim: true},
 };
 
 export const TestRow: React.FC<{
