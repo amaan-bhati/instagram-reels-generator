@@ -31,7 +31,7 @@ export const VerdictCard: React.FC<{
     <div style={{width, display: 'flex', flexDirection: 'column', gap: 20}}>
       {/* breadcrumb */}
       <div style={{display: 'flex', alignItems: 'center', gap: 14, paddingLeft: 4}}>
-        <span style={{fontFamily: sans, fontSize: 30, fontWeight: 600, color: C.amber}}>{suite}</span>
+        <span style={{fontFamily: sans, fontSize: 30, fontWeight: 600, color: C.orangeDeep}}>{suite}</span>
         <span style={{fontFamily: sans, fontSize: 30, color: C.textFaint}}>/</span>
         <span style={{fontFamily: sans, fontSize: 30, fontWeight: 600, color: C.exposed}}>{step}</span>
       </div>

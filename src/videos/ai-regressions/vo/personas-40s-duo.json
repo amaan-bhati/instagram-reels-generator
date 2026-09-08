@@ -1,0 +1,152 @@
+{
+  "video": "out/ai-regressions/personas-40s.mp4",
+  "composition": "Personas40",
+  "fps": 30,
+  "durationSeconds": 40.0,
+  "style": "two speakers",
+  "voiceNotes": "DEV is the one who shipped it: a little sheepish, then genuinely curious. GUIDE is steady and unimpressed, never smug. Keep handoffs fast. The very short DEV interjections are what make this feel live instead of read, so do not let them drag.",
+  "voices": {
+    "DEV": {
+      "elevenlabsVoiceId": "REPLACE_WITH_VOICE_ID_A",
+      "stability": 0.4,
+      "similarityBoost": 0.75,
+      "style": 0.25,
+      "speed": 1.0
+    },
+    "GUIDE": {
+      "elevenlabsVoiceId": "REPLACE_WITH_VOICE_ID_B",
+      "stability": 0.55,
+      "similarityBoost": 0.75,
+      "style": 0.1,
+      "speed": 1.0
+    }
+  },
+  "segments": [
+    {
+      "scene": "hook",
+      "start": 0.0,
+      "end": 2.5,
+      "voice": "DEV",
+      "text": "AI shipped it. All green."
+    },
+    {
+      "scene": "blast",
+      "start": 2.55,
+      "end": 4.2,
+      "voice": "DEV",
+      "text": "Then prod broke."
+    },
+    {
+      "scene": "blast",
+      "start": 4.32,
+      "end": 6.5,
+      "voice": "GUIDE",
+      "text": "Three endpoints you never touched."
+    },
+    {
+      "scene": "aiUsers",
+      "start": 6.62,
+      "end": 9.9,
+      "voice": "GUIDE",
+      "text": "It only tested the users it imagined."
+    },
+    {
+      "scene": "aiUsers",
+      "start": 10.02,
+      "end": 11.5,
+      "voice": "DEV",
+      "text": "From the code."
+    },
+    {
+      "scene": "question",
+      "start": 11.62,
+      "end": 14.5,
+      "voice": "DEV",
+      "text": "How do I catch the rest?"
+    },
+    {
+      "scene": "keployUsers",
+      "start": 14.62,
+      "end": 17.8,
+      "voice": "GUIDE",
+      "text": "Keploy learns your app from real traffic."
+    },
+    {
+      "scene": "keployUsers",
+      "start": 17.92,
+      "end": 19.3,
+      "voice": "DEV",
+      "text": "All of them?"
+    },
+    {
+      "scene": "keployUsers",
+      "start": 19.42,
+      "end": 21.5,
+      "voice": "GUIDE",
+      "text": "Every user. Every path."
+    },
+    {
+      "scene": "record",
+      "start": 21.62,
+      "end": 25.5,
+      "voice": "GUIDE",
+      "text": "It records every real call in the path."
+    },
+    {
+      "scene": "generate",
+      "start": 25.62,
+      "end": 27.8,
+      "voice": "GUIDE",
+      "text": "Then it writes both kinds."
+    },
+    {
+      "scene": "generate",
+      "start": 27.92,
+      "end": 30.0,
+      "voice": "DEV",
+      "text": "Normal, and edge cases."
+    },
+    {
+      "scene": "replay",
+      "start": 30.12,
+      "end": 32.4,
+      "voice": "GUIDE",
+      "text": "Replays every one against mocks."
+    },
+    {
+      "scene": "replay",
+      "start": 32.52,
+      "end": 33.5,
+      "voice": "DEV",
+      "text": "No database."
+    },
+    {
+      "scene": "verdict",
+      "start": 33.62,
+      "end": 36.2,
+      "voice": "GUIDE",
+      "text": "And flags exactly what broke."
+    },
+    {
+      "scene": "verdict",
+      "start": 36.32,
+      "end": 38.0,
+      "voice": "DEV",
+      "text": "Before users find it."
+    },
+    {
+      "scene": "payoff",
+      "start": 38.02,
+      "end": 38.9,
+      "voice": "DEV",
+      "text": "Ship AI."
+    },
+    {
+      "scene": "payoff",
+      "start": 39.0,
+      "end": 40.0,
+      "voice": "GUIDE",
+      "text": "Not regressions."
+    }
+  ]
+}

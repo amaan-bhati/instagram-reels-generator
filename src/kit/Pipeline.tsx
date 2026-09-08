@@ -52,7 +52,7 @@ export const PipelineStep: React.FC<{
           }}
         >
           {done ? (
-            <span style={{color: '#FFFFFF', fontFamily: sans, fontSize: 21, fontWeight: 700}}>✓</span>
+            <span style={{color: C.onBrand, fontFamily: sans, fontSize: 21, fontWeight: 700}}>✓</span>
           ) : null}
         </span>
         <span style={{fontFamily: sans, fontSize: 33, fontWeight: 600, color: C.text}}>{label}</span>

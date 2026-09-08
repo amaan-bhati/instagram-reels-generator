@@ -1,7 +1,7 @@
 import React from 'react';
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {breathe, settle} from '../lib/anim';
-import {colors as C, highlight, radius, shadow} from '../theme';
+import {colors as C, grad, highlight, radius, shadow} from '../theme';
 import {mono, sans} from './fonts';
 
 export type TileState = 'ok' | 'edited' | 'broken';
@@ -48,7 +48,16 @@ export const FeatureMap: React.FC<{
   source: number;
   /** frame the ripple lines start drawing */
   rippleAt: number;
-}> = ({features, source, rippleAt}) => {
+  /**
+   * 'skeleton' replaces the endpoint labels with shimmer bars.
+   *
+   * The status is the message here: three of six broke. The specific paths are
+   * incidental example content, and a viewer reported reading those instead of
+   * the headline. Skeletons keep the count and the colour legible while giving
+   * the eye nothing to parse.
+   */
+  labelMode?: 'text' | 'skeleton';
+}> = ({features, source, rippleAt, labelMode = 'text'}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
 
@@ -127,9 +136,23 @@ export const FeatureMap: React.FC<{
               padding: '0 24px',
             }}
           >
-            <span style={{fontFamily: mono, fontSize: 23, fontWeight: 500, color: C.text}}>
-              {f.label}
-            </span>
+            {labelMode === 'skeleton' ? (
+              <span
+                style={{
+                  display: 'block',
+                  width: 108 + ((i * 37) % 62),
+                  height: 13,
+                  borderRadius: 99,
+                  background: grad.skeleton,
+                  backgroundSize: '320% 100%',
+                  backgroundPosition: `${((frame * 3 + i * 60) % 320) - 110}% 0`,
+                }}
+              />
+            ) : (
+              <span style={{fontFamily: mono, fontSize: 23, fontWeight: 500, color: C.text}}>
+                {f.label}
+              </span>
+            )}
             <span style={{display: 'flex', alignItems: 'center', gap: 10}}>
               <span style={{fontFamily: sans, fontSize: 24, fontWeight: 700, color: l.fg}}>
                 {l.icon}

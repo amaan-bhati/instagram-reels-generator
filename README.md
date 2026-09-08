@@ -53,6 +53,7 @@ src/
   timeline.ts     scene durations, single source of truth for the cut
   lib/anim.ts     settle spring, mseg multi-segment easing, pushIn, breathe, typewriter
   kit/            reusable components — reuse these for every future reel
+                  PersonaGraph = hub and spokes, `hub` + `count` props
                   Pipeline     = filling progress steps, counters, dot rows
                   TestCaseCard = skeleton test case + gradient method badge
                   SuiteRow     = pass/fail suite row, styled like Keploy's panel

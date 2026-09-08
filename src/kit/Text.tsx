@@ -27,14 +27,20 @@ export const Heading: React.FC<{
   </div>
 );
 
-/** Gradient headline text. For the line that has to land. */
+/**
+ * Gradient headline text. For the line that has to land.
+ *
+ * Defaults to `grad.brandText`, not `grad.brand`. The fill ramp is tuned to
+ * carry white text on top of it; this one is tuned to BE the text on white.
+ * A viewer flagged the original washing out, and it measured 1.39:1.
+ */
 export const GradText: React.FC<{
   children: React.ReactNode;
   size?: number;
   g?: string;
   align?: 'left' | 'center';
   style?: React.CSSProperties;
-}> = ({children, size = 70, g = grad.brand, align = 'center', style}) => (
+}> = ({children, size = 70, g = grad.brandText, align = 'center', style}) => (
   <div
     style={{
       fontFamily: sans,

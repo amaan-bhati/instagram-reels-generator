@@ -1,0 +1,72 @@
+1
+00:00:00,000 --> 00:00:02,500
+DEV: AI shipped it. All green.
+
+2
+00:00:02,550 --> 00:00:04,200
+DEV: Then prod broke.
+
+3
+00:00:04,320 --> 00:00:06,500
+GUIDE: Three endpoints you never touched.
+
+4
+00:00:06,620 --> 00:00:09,900
+GUIDE: It only tested the users it imagined.
+
+5
+00:00:10,020 --> 00:00:11,500
+DEV: From the code.
+
+6
+00:00:11,620 --> 00:00:14,500
+DEV: How do I catch the rest?
+
+7
+00:00:14,620 --> 00:00:17,800
+GUIDE: Keploy learns your app from real traffic.
+
+8
+00:00:17,920 --> 00:00:19,300
+DEV: All of them?
+
+9
+00:00:19,420 --> 00:00:21,500
+GUIDE: Every user. Every path.
+
+10
+00:00:21,620 --> 00:00:25,500
+GUIDE: It records every real call in the path.
+
+11
+00:00:25,620 --> 00:00:27,800
+GUIDE: Then it writes both kinds.
+
+12
+00:00:27,920 --> 00:00:30,000
+DEV: Normal, and edge cases.
+
+13
+00:00:30,120 --> 00:00:32,400
+GUIDE: Replays every one against mocks.
+
+14
+00:00:32,520 --> 00:00:33,500
+DEV: No database.
+
+15
+00:00:33,620 --> 00:00:36,200
+GUIDE: And flags exactly what broke.
+
+16
+00:00:36,320 --> 00:00:38,000
+DEV: Before users find it.
+
+17
+00:00:38,020 --> 00:00:38,900
+DEV: Ship AI.
+
+18
+00:00:39,000 --> 00:00:40,000
+GUIDE: Not regressions.
+

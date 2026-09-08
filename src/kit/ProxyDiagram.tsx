@@ -134,6 +134,28 @@ export const ProxyDiagram: React.FC<{
             fill="none"
           />
         ))}
+        {/*
+          Arrowheads. A viewer read the bare drops as the proxy DIVIDING into
+          Postgres rather than calling it, which is the opposite of the point.
+          Direction is what separates flow from structure, so every hop now
+          terminates in an arrow. That alone fixed the read, in both the record
+          and the replay phase, since they are the same component.
+        */}
+        {DEP_X.map((x, i) => {
+          const cx = x + DEP.w / 2;
+          const col = rec ? C.textFaint : 'rgba(148,163,184,0.55)';
+          return (
+            <polygon
+              key={`ah${i}`}
+              points={`${cx},${DEP.y - 2} ${cx - 8},${DEP.y - 17} ${cx + 8},${DEP.y - 17}`}
+              fill={col}
+            />
+          );
+        })}
+        <polygon
+          points={`450,${PROXY_IN.y - 2} 442,${PROXY_IN.y - 17} 458,${PROXY_IN.y - 17}`}
+          fill={C.textFaint}
+        />
         {dots(spine, 2, 34, !rec)}
         {rec ? routes.map((r, i) => <g key={i}>{dots(r, 2, 40, false)}</g>) : null}
       </svg>

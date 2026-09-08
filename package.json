@@ -4,22 +4,43 @@
   "private": true,
   "scripts": {
     "dev": "remotion studio",
-    "render": "remotion render BlastRadius out/blast-radius.mp4",
-    "still": "remotion still BlastRadius",
-    "render:short": "remotion render Regressions40 out/regressions-40s.mp4",
-    "render:tight": "remotion render Regressions30 out/regressions-30s.mp4",
-    "render:all": "npm run render && npm run render:short && npm run render:tight",
-    "check": "node scripts-lint-tokens.mjs && node scripts-check-variants.mjs && tsc --noEmit"
+    "render": "remotion render BlastRadius out/ai-regressions/blast-radius.mp4",
+    "still": "remotion still Personas40",
+    "render:short": "remotion render Regressions40 out/ai-regressions/regressions-40s.mp4",
+    "render:tight": "remotion render Regressions30 out/ai-regressions/regressions-30s.mp4",
+    "render:all": "npm run render && npm run render:short && npm run render:tight && npm run render:coverage && npm run render:bridge && npm run render:personas && npm run render:personas2 && npm run render:personas3 && npm run render:personas4 && npm run render:personas5 && npm run render:personas6 && npm run render:personas7 && npm run render:https && npm run render:https2",
+    "check": "node scripts-lint-tokens.mjs && node scripts-lint-contrast.mjs && node scripts-check-variants.mjs && tsc --noEmit",
+    "render:coverage": "remotion render Coverage40 out/ai-regressions/coverage-40s.mp4",
+    "render:bridge": "remotion render Bridged40 out/ai-regressions/bridged-40s.mp4",
+    "render:personas": "remotion render Personas40 out/ai-regressions/personas-40s.mp4",
+    "vo:generate": "node scripts-vo-generate.mjs",
+    "vo:check": "node scripts-vo-check.mjs",
+    "vo:export": "node scripts-vo-export.mjs",
+    "vo:voice": "node scripts-voiceover.mjs",
+    "vo:all": "node scripts-vo-check.mjs src/videos/ai-regressions/vo/personas-40s-single.json && node scripts-vo-export.mjs src/videos/ai-regressions/vo/personas-40s-single.json && node scripts-vo-check.mjs src/videos/ai-regressions/vo/personas-40s-duo.json && node scripts-vo-export.mjs src/videos/ai-regressions/vo/personas-40s-duo.json",
+    "render:https": "remotion render MocksOnly42 out/https-mocks-only/mocks-only-42s.mp4",
+    "render:https2": "remotion render MocksOnly44 out/https-mocks-only/mocks-only-44s.mp4",
+    "render:personas2": "remotion render PersonasV2 out/ai-regressions/personas-v2-44s.mp4",
+    "render:personas3": "remotion render PersonasV3 out/ai-regressions/personas-v3-47s.mp4",
+    "render:personas4": "remotion render PersonasV4 out/ai-regressions/personas-v4-49s.mp4",
+    "render:personas5": "remotion render PersonasV5 out/ai-regressions/personas-v5-48s.mp4",
+    "render:personas6": "remotion render PersonasV6 out/ai-regressions/personas-v6-52s.mp4",
+    "render:personas7": "remotion render PersonasV7 out/ai-regressions/personas-v7-52s.mp4"
   },
   "dependencies": {
     "@remotion/cli": "4.0.417",
     "@remotion/google-fonts": "4.0.417",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "remotion": "4.0.417"
+    "remotion": "4.0.417",
+    "zod": "3.22.3"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.124.0",
     "@types/react": "19.0.0",
     "typescript": "5.6.3"
+  },
+  "overrides": {
+    "zod": "3.22.3"
   }
 }

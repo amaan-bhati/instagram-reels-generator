@@ -10,7 +10,7 @@ const tones: Record<ChipTone, {bg: string; fg: string; bd: string}> = {
   pass: {bg: grad.passSoft, fg: C.masked, bd: 'rgba(5,150,105,0.30)'},
   fail: {bg: grad.failSoft, fg: C.exposed, bd: 'rgba(225,29,72,0.32)'},
   /** filled brand gradient, white text. For the one thing that must pop. */
-  brand: {bg: grad.brand, fg: '#FFFFFF', bd: 'transparent'},
+  brand: {bg: grad.brand, fg: C.onBrand, bd: 'transparent'},
 };
 
 export const Chip: React.FC<{

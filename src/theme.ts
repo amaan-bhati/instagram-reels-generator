@@ -37,9 +37,29 @@ export const colors = {
   maskedBg: '#86EFAC',
 
   // text
+  /** text/glyphs sitting on a filled gradient */
+  onBrand: '#FFFFFF',
+
   text: '#1C2434',
   textDim: '#64748B',
   textFaint: '#94A3B8',
+} as const;
+
+/**
+ * Per dependency colours, from the reference diagram.
+ *
+ * DESIGN 0.3 allows one accent, so this is a deliberate, requested exception.
+ * The justification that makes it defensible: these read as third party service
+ * identities rather than as Keploy accents, the same way a logo does, and
+ * colour coding the connector to its card is what makes three simultaneous
+ * call paths legible at a glance. If it ever needs to come back inside the
+ * rule, set every `line` and `tint` below to colors.orange and the layout
+ * still works.
+ */
+export const deps = {
+  postgres: {line: '#C2740A', tint: 'rgba(194,116,10,0.12)', text: '#8A5208'},
+  redis: {line: '#2563EB', tint: 'rgba(37,99,235,0.10)', text: '#1D4ED8'},
+  mail: {line: '#7C3AED', tint: 'rgba(124,58,237,0.10)', text: '#6D28D9'},
 } as const;
 
 export const radius = {sm: 10, md: 16, lg: 24, pill: 999} as const;
@@ -56,16 +76,31 @@ export const shadow = {
 export const highlight = 'inset 0 1px 0 rgba(255,255,255,0.9)';
 
 /**
- * Gradients. The brand ramp is lifted straight off the logo SVG
- * (#FAD961 -> #F76B1C), so every accent surface matches the mark.
- * White background stays non-negotiable; the gradients carry the modern feel.
+ * Gradients.
+ *
+ * These started as the logo ramp (#FAD961 to #F76B1C) so that accent surfaces
+ * matched the mark. That was wrong for anything carrying text: white on
+ * #FAD961 measures 1.39:1. Two rounds of review later, every ramp below is
+ * held to 4.5:1 at BOTH stops, not just the 3:1 large-text floor, because
+ * these chips are small on a phone and the light stop was what kept reading as
+ * washed out.
+ *
+ * `logo` keeps the original ramp. It is correct for the mark, which is an
+ * image, and wrong for everything else.
+ *
+ * scripts-lint-contrast.mjs enforces all of this.
  */
 export const grad = {
-  brand: 'linear-gradient(135deg, #FAD961 0%, #F76B1C 100%)',
-  brandSoft: 'linear-gradient(135deg, rgba(250,217,97,0.20) 0%, rgba(247,107,28,0.16) 100%)',
-  pass: 'linear-gradient(135deg, #34D399 0%, #059669 100%)',
+  /** fills that carry white text. Both stops clear WCAG AA large text. */
+  brand: 'linear-gradient(135deg, #C44A0A 0%, #9A3208 100%)',
+  /** gradient TEXT on the white page. Dark enough to read at display sizes. */
+  brandText: 'linear-gradient(135deg, #C44A0A 0%, #96300A 100%)',
+  /** the logo ramp. Correct for the mark itself, never for text or fills. */
+  logo: 'linear-gradient(135deg, #FAD961 0%, #F76B1C 100%)',
+  brandSoft: 'linear-gradient(135deg, rgba(247,107,28,0.14) 0%, rgba(232,89,14,0.12) 100%)',
+  pass: 'linear-gradient(135deg, #0A7E56 0%, #036049 100%)',
   passSoft: 'linear-gradient(135deg, rgba(52,211,153,0.18) 0%, rgba(5,150,105,0.13) 100%)',
-  fail: 'linear-gradient(135deg, #FB7185 0%, #DC2626 100%)',
+  fail: 'linear-gradient(135deg, #DC2F50 0%, #A81834 100%)',
   failSoft: 'linear-gradient(135deg, rgba(251,113,133,0.18) 0%, rgba(220,38,38,0.13) 100%)',
   neutral: 'linear-gradient(135deg, #F8FAFC 0%, #EEF2F7 100%)',
   skeleton: 'linear-gradient(90deg, #EDF1F6 0%, #E2E8F0 50%, #EDF1F6 100%)',

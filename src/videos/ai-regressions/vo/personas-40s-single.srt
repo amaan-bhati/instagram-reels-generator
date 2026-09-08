@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:02,500
+Your AI shipped it. All green.
+
+2
+00:00:02,600 --> 00:00:06,500
+Then it changed one endpoint, and broke three others.
+
+3
+00:00:06,650 --> 00:00:11,500
+It only tested the users it could imagine from your code.
+
+4
+00:00:11,650 --> 00:00:14,500
+How do you catch the rest?
+
+5
+00:00:14,650 --> 00:00:21,500
+Keploy learns your app from real traffic. Every kind of user. Every path they actually take.
+
+6
+00:00:21,650 --> 00:00:25,500
+It records every real call in the path.
+
+7
+00:00:25,650 --> 00:00:30,000
+Then writes both kinds. Normal, and the edge cases.
+
+8
+00:00:30,100 --> 00:00:33,500
+Replays all of them against mocked dependencies.
+
+9
+00:00:33,650 --> 00:00:38,000
+And flags the regression AI missed, with a confidence score.
+
+10
+00:00:38,050 --> 00:00:40,000
+Just not its regressions.
+
