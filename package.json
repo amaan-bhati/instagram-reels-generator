@@ -25,7 +25,16 @@
     "render:personas4": "remotion render PersonasV4 out/ai-regressions/personas-v4-49s.mp4",
     "render:personas5": "remotion render PersonasV5 out/ai-regressions/personas-v5-48s.mp4",
     "render:personas6": "remotion render PersonasV6 out/ai-regressions/personas-v6-52s.mp4",
-    "render:personas7": "remotion render PersonasV7 out/ai-regressions/personas-v7-52s.mp4"
+    "render:personas7": "remotion render PersonasV7 out/ai-regressions/personas-v7-52s.mp4",
+    "vo:11labs": "node scripts-vo-elevenlabs.mjs",
+    "audio:timeline": "node scripts-audio-timeline.mjs",
+    "audio:attach": "node scripts-attach-audio.mjs",
+    "render:personas8": "remotion render PersonasV8 out/ai-regressions/_silent-masters/personas-v8-48s.mp4",
+    "render:final": "npm run render:personas8 && node scripts-attach-audio.mjs out/ai-regressions/_silent-masters/personas-v8-48s.mp4 audio/regressions-1.mp3 --out out/ai-regressions/FINAL-keploy-regressions-48s.mp4",
+    "render:personas9": "remotion render PersonasV9 out/ai-regressions/_silent-masters/personas-v9-53s.mp4",
+    "render:final9": "npm run render:personas9 && node scripts-attach-audio.mjs out/ai-regressions/_silent-masters/personas-v9-53s.mp4 audio/regressions-1.mp3 --delay 5.0 --out out/ai-regressions/FINAL-keploy-regressions-53s.mp4",
+    "render:personas10": "remotion render PersonasV10 out/ai-regressions/_silent-masters/personas-v10-52s.mp4",
+    "render:final10": "npm run render:personas10 && node scripts-attach-audio.mjs out/ai-regressions/_silent-masters/personas-v10-52s.mp4 audio/ElevenLabs_regressions.mp3 --out out/ai-regressions/FINAL-keploy-regressions-52s.mp4"
   },
   "dependencies": {
     "@remotion/cli": "4.0.417",

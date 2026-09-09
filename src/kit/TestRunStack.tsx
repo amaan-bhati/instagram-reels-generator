@@ -143,3 +143,69 @@ export const TestRunStack: React.FC<{
     </div>
   );
 };
+
+/**
+ * The consequence card.
+ *
+ * Sits under a list of passing tests and contradicts it. The whole argument of
+ * the opening beat is the gap between those two things: the suite is green and
+ * production is not, and putting them in one frame is what makes that land
+ * without a sentence explaining it.
+ */
+export const FailureBanner: React.FC<{
+  /** One sentence, styled as one sentence. See the note below. */
+  label: string;
+  at: number;
+  width?: number;
+}> = ({label, at, width = 880}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const k = settle(frame, fps, at);
+  const pulse = breathe(frame, fps, 1.5);
+  if (k <= 0) return null;
+
+  return (
+    <div
+      style={{
+        width,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 20,
+        padding: '20px 26px',
+        borderRadius: radius.lg,
+        background: grad.failSoft,
+        border: `2px solid rgba(168,24,52,0.42)`,
+        boxShadow: `0 0 ${10 + pulse * 22}px rgba(168,24,52,${0.12 + pulse * 0.14}), ${highlight}`,
+        opacity: k,
+        transform: `scale(${0.96 + k * 0.04})`,
+      }}
+    >
+      <span
+        style={{
+          width: 44,
+          height: 44,
+          borderRadius: 99,
+          flexShrink: 0,
+          background: grad.fail,
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontFamily: sans,
+          fontSize: 24,
+          fontWeight: 700,
+          color: C.onBrand,
+        }}
+      >
+        ✕
+      </span>
+      {/*
+        One run of text at one size and weight.
+        An earlier version pulled the count out into its own larger, coloured
+        span. That turned a sentence into a statistic and made the reader parse
+        two things instead of reading one, which is exactly wrong when the
+        count is a placeholder rather than a measurement.
+      */}
+      <span style={{fontFamily: sans, fontSize: 30, fontWeight: 600, color: C.text}}>{label}</span>
+    </div>
+  );
+};

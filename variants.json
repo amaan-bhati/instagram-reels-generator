@@ -194,8 +194,50 @@
       "scenes": "src/videos/ai-regressions/scenes/personas-v7",
       "output": "out/ai-regressions/personas-v7-52s.mp4",
       "script": "src/videos/ai-regressions/scripts/SCRIPT-PERSONAS-V7.md",
-      "status": "current",
+      "status": "frozen",
       "note": "Copy pass. Keploy is the named subject in every beat of its own half instead of 'it'. Replay caption drops the database callout. Payoff replaced with the outcome and grown to 3.0s, paid for from replay."
+    },
+    {
+      "name": "Everyone Else v8 (timed from the voiceover recording)",
+      "composition": "PersonasV8",
+      "seconds": 48.1,
+      "frames": 1443,
+      "topic": "ai-regressions",
+      "timeline": "src/videos/ai-regressions/timelineFromAudio.ts",
+      "reel": "src/videos/ai-regressions/ReelPersonasV8.tsx",
+      "scenes": "src/videos/ai-regressions/scenes/personas-v8",
+      "output": "out/ai-regressions/_silent-masters/personas-v8-48s.mp4",
+      "script": "src/videos/ai-regressions/scripts/SCRIPT-PERSONAS-V8.md",
+      "status": "frozen",
+      "note": "Scene durations generated from audio/regressions-1.mp3 by scripts-audio-timeline.mjs. Boundaries floored into the speaker's pauses; an assertion verifies every line sits inside its own scene. Shippable deliverable is FINAL-keploy-regressions-48s.mp4 (video + voiceover)."
+    },
+    {
+      "name": "Everyone Else v9 (intro beat added, hook animation stretched)",
+      "composition": "PersonasV9",
+      "seconds": 53.1,
+      "frames": 1593,
+      "topic": "ai-regressions",
+      "timeline": "src/videos/ai-regressions/timelinePersonasV9.ts",
+      "reel": "src/videos/ai-regressions/ReelPersonasV9.tsx",
+      "scenes": "src/videos/ai-regressions/scenes/personas-v9",
+      "output": "out/ai-regressions/_silent-masters/personas-v9-53s.mp4",
+      "script": "src/videos/ai-regressions/scripts/SCRIPT-PERSONAS-V9.md",
+      "status": "frozen",
+      "note": "Adds the opening claim-plus-proof beat: heading pinned to a fixed position, seven skeleton-only cards written by an AI cursor, then a one-sentence production failure banner. Hook animation stretched to fill its scene. Voiced deliverable is FINAL-keploy-regressions-53s.mp4: regressions-1.mp3 delayed 5.0s so the intro plays as a silent visual hook and every line lands on its own scene."
+    },
+    {
+      "name": "Everyone Else v10 (11 lines, all measured from the recording)",
+      "composition": "PersonasV10",
+      "seconds": 51.83,
+      "frames": 1555,
+      "topic": "ai-regressions",
+      "timeline": "src/videos/ai-regressions/timelineFromAudio11.ts",
+      "reel": "src/videos/ai-regressions/ReelPersonasV10.tsx",
+      "scenes": "src/videos/ai-regressions/scenes/personas-v10",
+      "output": "out/ai-regressions/_silent-masters/personas-v10-52s.mp4",
+      "script": "src/videos/ai-regressions/scripts/SCRIPT-PERSONAS-V10.md",
+      "status": "current",
+      "note": "All eleven scene lengths measured from audio/ElevenLabs_regressions.mp3 (51.53s). Intro has its own spoken line so there is no silent opening. Publishable file is FINAL-keploy-regressions-52s.mp4."
     }
   ],
   "archived": [

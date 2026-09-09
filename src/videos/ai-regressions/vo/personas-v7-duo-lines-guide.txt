@@ -1,0 +1,15 @@
+# PersonasV7 GUIDE
+# Generate each line separately, place at the timecode shown.
+# Voice id: REPLACE_WITH_VOICE_ID_B
+# stability 0.55 | similarity 0.75 | style 0.1
+
+[00:02.82]  And you shipped it.
+[00:07.72]  Three endpoints you never touched.
+[00:12.10]  AI only imagined a few users.
+[00:20.10]  Keploy reads the traffic you already have.
+[00:24.92]  And works out everyone else.
+[00:27.10]  Keploy sits between you and your dependencies.
+[00:32.60]  Then Keploy writes the ordinary cases.
+[00:38.10]  Keploy runs every one again.
+[00:42.60]  Keploy returns passes and failures together.
+[00:50.72]  Not in production.

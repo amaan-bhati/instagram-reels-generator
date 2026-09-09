@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:05,500
+Your AI wrote the feature, wrote the tests, and shipped it.
+
+2
+00:00:05,600 --> 00:00:12,000
+One endpoint changed. Three others broke. Nothing in the suite noticed.
+
+3
+00:00:12,100 --> 00:00:16,500
+AI could only imagine a handful of people using this.
+
+4
+00:00:16,600 --> 00:00:20,000
+Someone has to cover the rest.
+
+5
+00:00:20,100 --> 00:00:27,000
+So Keploy studies the traffic you already have, and works out who else shows up.
+
+6
+00:00:27,100 --> 00:00:32,500
+Keploy sits between your app and everything your app calls.
+
+7
+00:00:32,600 --> 00:00:38,000
+Then Keploy turns that into the ordinary cases, and the awkward ones.
+
+8
+00:00:38,100 --> 00:00:42,500
+Keploy runs every one again, against the recordings.
+
+9
+00:00:42,600 --> 00:00:49,000
+Keploy hands back passes and failures together, so nothing slips through.
+
+10
+00:00:49,100 --> 00:00:52,000
+Find it here, not in production.
+

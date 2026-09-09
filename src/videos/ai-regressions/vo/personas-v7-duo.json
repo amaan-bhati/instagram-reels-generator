@@ -1,0 +1,173 @@
+{
+  "video": "out/ai-regressions/personas-v7-52s.mp4",
+  "composition": "PersonasV7",
+  "fps": 30,
+  "durationSeconds": 52.0,
+  "style": "two speakers",
+  "voiceNotes": "DEV shipped the thing: a little sheepish at first, then genuinely curious. GUIDE is steady and unimpressed, never smug. Keep the handoffs fast. DEV's one and two word interjections are what make this feel live instead of read, so do not let them drag. Say the product name. The picture names Keploy too, so this doubles up on purpose: the reel is meant to plant the name, not to be subtle about it. Keep the delivery flat and factual so the repetition reads as clarity rather than as an advert.",
+  "voices": {
+    "DEV": {
+      "elevenlabsVoiceId": "REPLACE_WITH_VOICE_ID_A",
+      "stability": 0.4,
+      "similarityBoost": 0.75,
+      "style": 0.25,
+      "speed": 1.0
+    },
+    "GUIDE": {
+      "elevenlabsVoiceId": "REPLACE_WITH_VOICE_ID_B",
+      "stability": 0.55,
+      "similarityBoost": 0.75,
+      "style": 0.1,
+      "speed": 1.0
+    }
+  },
+  "segments": [
+    {
+      "scene": "hook",
+      "start": 0.0,
+      "end": 2.7,
+      "voice": "DEV",
+      "text": "AI wrote the feature and tests."
+    },
+    {
+      "scene": "hook",
+      "start": 2.82,
+      "end": 5.5,
+      "voice": "GUIDE",
+      "text": "And you shipped it."
+    },
+    {
+      "scene": "blast",
+      "start": 5.6,
+      "end": 7.6,
+      "voice": "DEV",
+      "text": "Then prod broke."
+    },
+    {
+      "scene": "blast",
+      "start": 7.72,
+      "end": 10.0,
+      "voice": "GUIDE",
+      "text": "Three endpoints you never touched."
+    },
+    {
+      "scene": "blast",
+      "start": 10.12,
+      "end": 12.0,
+      "voice": "DEV",
+      "text": "And nothing failed."
+    },
+    {
+      "scene": "aiUsers",
+      "start": 12.1,
+      "end": 15.0,
+      "voice": "GUIDE",
+      "text": "AI only imagined a few users."
+    },
+    {
+      "scene": "aiUsers",
+      "start": 15.12,
+      "end": 16.5,
+      "voice": "DEV",
+      "text": "Five, maybe."
+    },
+    {
+      "scene": "question",
+      "start": 16.6,
+      "end": 20.0,
+      "voice": "DEV",
+      "text": "So who covers the rest?"
+    },
+    {
+      "scene": "keployUsers",
+      "start": 20.1,
+      "end": 23.4,
+      "voice": "GUIDE",
+      "text": "Keploy reads the traffic you already have."
+    },
+    {
+      "scene": "keployUsers",
+      "start": 23.52,
+      "end": 24.8,
+      "voice": "DEV",
+      "text": "And?"
+    },
+    {
+      "scene": "keployUsers",
+      "start": 24.92,
+      "end": 27.0,
+      "voice": "GUIDE",
+      "text": "And works out everyone else."
+    },
+    {
+      "scene": "record",
+      "start": 27.1,
+      "end": 30.2,
+      "voice": "GUIDE",
+      "text": "Keploy sits between you and your dependencies."
+    },
+    {
+      "scene": "record",
+      "start": 30.32,
+      "end": 32.5,
+      "voice": "DEV",
+      "text": "Recording all of it."
+    },
+    {
+      "scene": "generate",
+      "start": 32.6,
+      "end": 35.6,
+      "voice": "GUIDE",
+      "text": "Then Keploy writes the ordinary cases."
+    },
+    {
+      "scene": "generate",
+      "start": 35.72,
+      "end": 38.0,
+      "voice": "DEV",
+      "text": "And the awkward ones."
+    },
+    {
+      "scene": "replay",
+      "start": 38.1,
+      "end": 41.0,
+      "voice": "GUIDE",
+      "text": "Keploy runs every one again."
+    },
+    {
+      "scene": "replay",
+      "start": 41.12,
+      "end": 42.5,
+      "voice": "DEV",
+      "text": "No live database."
+    },
+    {
+      "scene": "verify",
+      "start": 42.6,
+      "end": 45.6,
+      "voice": "GUIDE",
+      "text": "Keploy returns passes and failures together."
+    },
+    {
+      "scene": "verify",
+      "start": 45.72,
+      "end": 49.0,
+      "voice": "DEV",
+      "text": "So nothing slips through quietly."
+    },
+    {
+      "scene": "payoff",
+      "start": 49.1,
+      "end": 50.6,
+      "voice": "DEV",
+      "text": "Found here."
+    },
+    {
+      "scene": "payoff",
+      "start": 50.72,
+      "end": 52.0,
+      "voice": "GUIDE",
+      "text": "Not in production."
+    }
+  ]
+}

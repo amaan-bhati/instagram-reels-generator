@@ -1,0 +1,16 @@
+# PersonasV7 DEV
+# Generate each line separately, place at the timecode shown.
+# Voice id: REPLACE_WITH_VOICE_ID_A
+# stability 0.4 | similarity 0.75 | style 0.25
+
+[00:00.00]  AI wrote the feature and tests.
+[00:05.60]  Then prod broke.
+[00:10.12]  And nothing failed.
+[00:15.12]  Five, maybe.
+[00:16.60]  So who covers the rest?
+[00:23.52]  And?
+[00:30.32]  Recording all of it.
+[00:35.72]  And the awkward ones.
+[00:41.12]  No live database.
+[00:45.72]  So nothing slips through quietly.
+[00:49.10]  Found here.

@@ -330,6 +330,59 @@ export const DepFlow: React.FC<{
         </Card>
       ) : null}
 
+      {/*
+        The sandbox, replay only.
+        During replay the dependency cards are already dashed and read `mocked`,
+        but individually: nothing said they are one thing that Keploy owns and
+        answers from. Enclosing them makes the boundary explicit, so the traffic
+        is visibly going into Keploy's own sandbox rather than out to the real
+        Postgres. Drawn before the cards so they sit inside it, and with a very
+        light fill so the connectors entering it stay visible.
+      */}
+      {replay ? (
+        <>
+          <div
+            style={{
+              position: 'absolute',
+              left: -6,
+              top: DEP.y - 38,
+              width: W + 12,
+              height: DEP.h + 56,
+              border: `2px dashed rgba(196,116,10,0.55)`,
+              borderRadius: radius.lg,
+              background: 'rgba(196,116,10,0.035)',
+              opacity: settle(frame, fps, hubAt + 10),
+            }}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              left: 0,
+              width: W,
+              top: DEP.y - 50,
+              textAlign: 'center',
+              opacity: settle(frame, fps, hubAt + 14),
+            }}
+          >
+            <span
+              style={{
+                fontFamily: sans,
+                fontSize: 20,
+                fontWeight: 700,
+                letterSpacing: 1.4,
+                color: C.orangeDeep,
+                background: C.bg,
+                borderRadius: radius.pill,
+                padding: '5px 16px',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              KEPLOY SANDBOX
+            </span>
+          </div>
+        </>
+      ) : null}
+
       {/* the dependencies */}
       {dependencies.map((d, i) => {
         const col = DEP_COLOR[d.key];

@@ -1,0 +1,89 @@
+{
+  "video": "out/ai-regressions/personas-v7-52s.mp4",
+  "composition": "PersonasV7",
+  "fps": 30,
+  "durationSeconds": 52.0,
+  "style": "single narrator",
+  "voiceNotes": "One voice. Calm and dry, a developer talking to a developer, not an ad read. Land on the periods and let the gaps sit. Say the product name. The picture names Keploy too, so this doubles up on purpose: the reel is meant to plant the name, not to be subtle about it. Keep the delivery flat and factual so the repetition reads as clarity rather than as an advert.",
+  "voices": {
+    "NARRATOR": {
+      "elevenlabsVoiceId": "REPLACE_WITH_VOICE_ID",
+      "stability": 0.45,
+      "similarityBoost": 0.75,
+      "style": 0.15,
+      "speed": 1.0
+    }
+  },
+  "segments": [
+    {
+      "scene": "hook",
+      "start": 0.0,
+      "end": 5.5,
+      "voice": "NARRATOR",
+      "text": "Your AI wrote the feature, wrote the tests, and shipped it."
+    },
+    {
+      "scene": "blast",
+      "start": 5.6,
+      "end": 12.0,
+      "voice": "NARRATOR",
+      "text": "One endpoint changed. Three others broke. Nothing in the suite noticed."
+    },
+    {
+      "scene": "aiUsers",
+      "start": 12.1,
+      "end": 16.5,
+      "voice": "NARRATOR",
+      "text": "AI could only imagine a handful of people using this."
+    },
+    {
+      "scene": "question",
+      "start": 16.6,
+      "end": 20.0,
+      "voice": "NARRATOR",
+      "text": "Someone has to cover the rest."
+    },
+    {
+      "scene": "keployUsers",
+      "start": 20.1,
+      "end": 27.0,
+      "voice": "NARRATOR",
+      "text": "So Keploy studies the traffic you already have, and works out who else shows up."
+    },
+    {
+      "scene": "record",
+      "start": 27.1,
+      "end": 32.5,
+      "voice": "NARRATOR",
+      "text": "Keploy sits between your app and everything your app calls."
+    },
+    {
+      "scene": "generate",
+      "start": 32.6,
+      "end": 38.0,
+      "voice": "NARRATOR",
+      "text": "Then Keploy turns that into the ordinary cases, and the awkward ones."
+    },
+    {
+      "scene": "replay",
+      "start": 38.1,
+      "end": 42.5,
+      "voice": "NARRATOR",
+      "text": "Keploy runs every one again, against the recordings."
+    },
+    {
+      "scene": "verify",
+      "start": 42.6,
+      "end": 49.0,
+      "voice": "NARRATOR",
+      "text": "Keploy hands back passes and failures together, so nothing slips through."
+    },
+    {
+      "scene": "payoff",
+      "start": 49.1,
+      "end": 52.0,
+      "voice": "NARRATOR",
+      "text": "Find it here, not in production."
+    }
+  ]
+}

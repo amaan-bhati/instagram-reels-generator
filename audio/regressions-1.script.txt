@@ -1,0 +1,10 @@
+Your AI wrote the feature, wrote the tests based on the code it wrote, and you shipped it.
+One feature added or updated by the AI. Three others broke due to the blast radius.
+While writing the tests, AI could only imagine few test cases and handful of people using it.
+Someone has to think of the missed cases.
+So Keploy studies, learns and understand your app, turns it all into test cases.
+Keploy sits between your app and everything your app calls to turn them into test cases.
+Then Keploy segregates it all into test suites, covering tests and the edge cases as well.
+Then runs every test against what it recorded.
+Keploy hands back passes and failures together, so nothing slips through.
+Find what breaks before your users do!

@@ -14,6 +14,11 @@ import {ReelPersonasV4} from './videos/ai-regressions/ReelPersonasV4';
 import {ReelPersonasV5} from './videos/ai-regressions/ReelPersonasV5';
 import {ReelPersonasV6} from './videos/ai-regressions/ReelPersonasV6';
 import {ReelPersonasV7} from './videos/ai-regressions/ReelPersonasV7';
+import {ReelPersonasV8} from './videos/ai-regressions/ReelPersonasV8';
+import {IntroHook} from './videos/ai-regressions/scenes/intro/IntroHook';
+import {IntroBreak} from './videos/ai-regressions/scenes/intro/IntroBreak';
+import {ReelPersonasV9} from './videos/ai-regressions/ReelPersonasV9';
+import {ReelPersonasV10} from './videos/ai-regressions/ReelPersonasV10';
 import {canvas} from './theme';
 import {TOTAL} from './videos/ai-regressions/timeline';
 import {TOTAL_SHORT} from './videos/ai-regressions/timelineShort';
@@ -29,6 +34,9 @@ import {TOTAL_PERSONAS_V4} from './videos/ai-regressions/timelinePersonasV4';
 import {TOTAL_PERSONAS_V5} from './videos/ai-regressions/timelinePersonasV5';
 import {TOTAL_PERSONAS_V6} from './videos/ai-regressions/timelinePersonasV6';
 import {TOTAL_PERSONAS_V7} from './videos/ai-regressions/timelinePersonasV7';
+import {TOTAL_FROM_AUDIO} from './videos/ai-regressions/timelineFromAudio';
+import {TOTAL_V9} from './videos/ai-regressions/timelinePersonasV9';
+import {TOTAL_FROM_AUDIO as TOTAL_V10} from './videos/ai-regressions/timelineFromAudio11';
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -288,6 +296,82 @@ export const RemotionRoot: React.FC = () => (
       width={canvas.width}
       height={canvas.height}
       defaultProps={{safeZone: true}}
+    />
+    {/* v8: every scene length derived from the voiceover recording. Shippable. */}
+    <Composition
+      id="PersonasV8"
+      component={ReelPersonasV8}
+      durationInFrames={TOTAL_FROM_AUDIO}
+      fps={canvas.fps}
+      width={canvas.width}
+      height={canvas.height}
+      defaultProps={{safeZone: false}}
+    />
+    <Composition
+      id="PersonasV8-SafeZone"
+      component={ReelPersonasV8}
+      durationInFrames={TOTAL_FROM_AUDIO}
+      fps={canvas.fps}
+      width={canvas.width}
+      height={canvas.height}
+      defaultProps={{safeZone: true}}
+    />
+    {/* Intro hook on its own, so the type and stroke can be judged before the
+        recording with this line exists. Timing here is a syllable weighted
+        guess and will be replaced by real onsets. */}
+    <Composition
+      id="PersonasV10"
+      component={ReelPersonasV10}
+      durationInFrames={TOTAL_V10}
+      fps={canvas.fps}
+      width={canvas.width}
+      height={canvas.height}
+      defaultProps={{safeZone: false}}
+    />
+    <Composition
+      id="PersonasV10-SafeZone"
+      component={ReelPersonasV10}
+      durationInFrames={TOTAL_V10}
+      fps={canvas.fps}
+      width={canvas.width}
+      height={canvas.height}
+      defaultProps={{safeZone: true}}
+    />
+    <Composition
+      id="PersonasV9"
+      component={ReelPersonasV9}
+      durationInFrames={TOTAL_V9}
+      fps={canvas.fps}
+      width={canvas.width}
+      height={canvas.height}
+      defaultProps={{safeZone: false}}
+    />
+    <Composition
+      id="PersonasV9-SafeZone"
+      component={ReelPersonasV9}
+      durationInFrames={TOTAL_V9}
+      fps={canvas.fps}
+      width={canvas.width}
+      height={canvas.height}
+      defaultProps={{safeZone: true}}
+    />
+    <Composition
+      id="IntroBreakPreview"
+      component={IntroBreak}
+      durationInFrames={165}
+      fps={canvas.fps}
+      width={canvas.width}
+      height={canvas.height}
+      defaultProps={{}}
+    />
+    <Composition
+      id="IntroPreview"
+      component={IntroHook}
+      durationInFrames={105}
+      fps={canvas.fps}
+      width={canvas.width}
+      height={canvas.height}
+      defaultProps={{}}
     />
     {/* Same timeline with the safe-zone overlay on, for design checks only. */}
     <Composition

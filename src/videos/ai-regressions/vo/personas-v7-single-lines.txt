@@ -1,0 +1,15 @@
+# PersonasV7 narrator
+# Generate each line separately, place at the timecode shown.
+# Voice id: REPLACE_WITH_VOICE_ID
+# stability 0.45 | similarity 0.75 | style 0.15
+
+[00:00.00]  Your AI wrote the feature, wrote the tests, and shipped it.
+[00:05.60]  One endpoint changed. Three others broke. Nothing in the suite noticed.
+[00:12.10]  AI could only imagine a handful of people using this.
+[00:16.60]  Someone has to cover the rest.
+[00:20.10]  So Keploy studies the traffic you already have, and works out who else shows up.
+[00:27.10]  Keploy sits between your app and everything your app calls.
+[00:32.60]  Then Keploy turns that into the ordinary cases, and the awkward ones.
+[00:38.10]  Keploy runs every one again, against the recordings.
+[00:42.60]  Keploy hands back passes and failures together, so nothing slips through.
+[00:49.10]  Find it here, not in production.
